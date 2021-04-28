@@ -1,0 +1,1688 @@
+#change in representation: a=0, b=1, c=2, d=3, e=4, f=5, g=6, h=7, i=8, j=9
+#2-letter variable names are for arcs
+#second letter in the variable name denotes the node: a to j
+
+#j is used to track the candidate solution
+j<-0
+
+#instead of finding an analytical solution for a problem we work with computers simulations
+for (n in 1:10000000)
+{
+
+# arc flow initialization
+ab<-0
+cb<-0
+ac<-0
+cd<-0
+be<-0
+de<-0
+df<-0
+cg<-0
+fg<-0
+eh<-0
+fh<-0
+gi<-0
+hi<-0
+
+# arc unit costs
+costab<-0
+costac<-0
+costcd<-1
+costcb<-2
+costcg<-5
+costdf<-3
+costbe<-3
+costde<-4
+costfg<-0.5
+costeh<-4
+costfh<-3
+costgi<-2
+costhi<-1
+
+
+
+#c is stored
+c0<-runif(1,0,20)
+if ((c0<=1)&(c0!=0)) {
+ac<-ac+1
+} else if ((c0<=2)&(c0>1)) {
+ac<-ac+2
+} else if ((c0<=3)&(c0>2)) {
+ac<-ac+3
+} else if ((c0<=4)&(c0>3)) {
+ac<-ac+4
+} else if ((c0<=5)&(c0>4)) {
+ac<-ac+5
+} else if ((c0<=6)&(c0>5)) {
+ac<-ac+6
+} else if ((c0<=7)&(c0>6)) {
+ac<-ac+7
+} else if ((c0<=8)&(c0>7)) {
+ac<-ac+8
+} else if ((c0<=9)&(c0>8)) {
+ac<-ac+9
+} else if ((c0<=10)&(c0>9)) {
+ac<-ac+10
+} else if ((c0<=11)&(c0>10)) {
+ac<-ac+11
+} else if ((c0<=12)&(c0>11)) {
+ac<-ac+12
+} else if ((c0<=13)&(c0>12)) {
+ac<-ac+13
+} else if ((c0<=14)&(c0>13)) {
+ac<-ac+14
+} else if ((c0<=15)&(c0>14)) {
+ac<-ac+15
+} else if ((c0<=16)&(c0>15)) {
+ac<-ac+16
+} else if ((c0<=17)&(c0>16)) {
+ac<-ac+17
+} else if ((c0<=18)&(c0>17)) {
+ac<-ac+18
+} else if ((c0<=19)&(c0>18)) {
+ac<-ac+19
+} else if ((c0<=20)&(c0>19)) {
+ac<-ac+20
+}
+if (c0==0) {cost2<-0} else cost2<-ac*costac
+
+#b is stored
+b0<-runif(1,0,10)
+if (((b0<=1)&(b0!=0))) {
+ab<-ab+1
+} else if ((b0<=2)&(b0>1)) {
+ab<-ab+2
+} else if ((b0<=3)&(b0>2)) {
+ab<-ab+3
+} else if ((b0<=4)&(b0>3)) {
+ab<-ab+4
+} else if ((b0<=5)&(b0>4)) {
+ab<-ab+5
+} else if ((b0<=6)&(b0>5)) {
+ab<-ab+6
+} else if ((b0<=7)&(b0>6)) {
+ab<-ab+7
+} else if ((b0<=8)&(b0>7)) {
+ab<-ab+8
+} else if ((b0<=9)&(b0>8)) {
+ab<-ab+9
+} else if ((b0<=10)&(b0>9)) {
+ab<-ab+10
+}
+if (b0==0) {cost1<-0} else cost1<-ab*costab
+
+
+#b is updated
+#c is updated
+
+
+if ((ac>0)) 
+{
+c1<-runif(1,0,11)
+if ((c1<=1)&(c1!=0)) {
+{
+if(ac>=1) 
+{
+cb<-ab+1
+
+ac<-ac-1
+}
+}
+} else if ((c1<=2)&(c1>1)) {
+{
+if(ac>=2) 
+{
+cb<-ab+2
+
+ac<-ac-2
+}
+}
+} else if ((c1<=3)&(c1>2)) {
+{
+if(ac>=3) 
+{
+cb<-ab+3
+
+ac<-ac-3
+}
+}
+} else if ((c1<=4)&(c1>3)) {
+{
+if(ac>=4) 
+{
+cb<-ab+4
+
+ac<-ac-4
+}
+}
+} else if ((c1<=5)&(c1>4)) {
+{
+if(ac>=5) 
+{
+cb<-ab+5
+
+ac<-ac-5
+}
+}
+} else if ((c1<=6)&(c1>5)) {
+{
+if(ac>=6) 
+{
+cb<-ab+6
+
+ac<-ac-6
+}
+}
+} else if ((c1<=7)&(c1>6)) {
+{
+if(ac>=7) 
+{
+cb<-ab+7
+
+ac<-ac-7
+}
+}
+} else if ((c1<=8)&(c1>7)) {
+{
+if(ac>=8) 
+{
+cb<-ab+8
+
+ac<-ac-8
+}
+}
+} else if ((c1<=9)&(c1>8)) {
+{
+if(ac>=9) 
+{
+cb<-ab+9
+
+ac<-ac-9
+}
+}
+} else if ((c1<=10)&(c1>9)) {
+{
+if(ac>=10) 
+{
+cb<-ab+10
+
+ac<-ac-10
+}
+}
+} else if ((c1<=11)&(c1>10)) {
+{
+if(ac>=11) 
+{
+cb<-ab+11
+
+ac<-ac-11
+}
+}
+} 
+}
+if (ac==0) {cost3<-0} else cost3<-ceiling(c1)*costcb
+#b has been updated
+#c has been updated
+
+
+
+
+#d is updated
+#c is updated
+
+if ((ac>0))
+{
+c2<-runif(1,0,13)
+if ((c2<=1)&(c2!=0)) {
+{
+if(ac>=1) 
+{
+cd<-cd+1
+
+ac<-ac-1
+}
+}
+} else if ((c2<=2)&(c2>1)) {
+{
+if(ac>=2) 
+{
+cd<-cd+2
+
+ac<-ac-2
+}
+}
+} else if ((c2<=3)&(c2>2)) {
+{
+if(ac>=3) 
+{
+cd<-cd+3
+
+ac<-ac-3
+}
+}
+} else if ((c2<=4)&(c2>3)) {
+{
+if(ac>=4) 
+{
+cd<-cd+4
+
+ac<-ac-4
+}
+}
+} else if ((c2<=5)&(c2>4)) {
+{
+if(ac>=5) 
+{
+cd<-cd+5
+
+ac<-ac-5
+}
+}
+} else if ((c2<=6)&(c2>5)) {
+{
+if(ac>=6) 
+{
+cd<-cd+6
+
+ac<-ac-6
+}
+}
+} else if ((c2<=7)&(c2>6)) {
+{
+if(ac>=7) 
+{
+cd<-cd+7
+
+ac<-ac-7
+}
+}
+} else if ((c2<=8)&(c2>7)) {
+{
+if(ac>=8) 
+{
+cd<-cd+8
+
+ac<-ac-8
+}
+}
+} else if ((c2<=9)&(c2>8)) {
+{
+if(ac>=9) 
+{
+cd<-cd+9
+
+ac<-ac-9
+}
+}
+} else if ((c2<=10)&(c2>9)) {
+{
+if(ac>=10) 
+{
+cd<-cd+10
+
+ac<-ac-10
+}
+}
+} else if ((c2<=11)&(c2>10)) {
+{
+if(ac>=11) 
+{
+cd<-cd+11
+
+ac<-ac-11
+}
+}
+} else if ((c2<=12)&(c2>11)) {
+{
+if(ac>=12) 
+{
+cd<-cd+12
+
+ac<-ac-12
+}
+}
+} else if ((c2<=13)&(c2>12)) {
+{
+if(ac>=13) 
+{
+cd<-cd+13
+
+ac<-ac-13
+}
+}
+} 
+
+}
+
+if (ac==0) {cost4<-0} else cost4<-ceiling(c2)*costcd
+
+#d has been updated
+#c has been updated
+
+
+
+#g is updated
+#c is updated
+
+
+
+if ((ac>0)) 
+{
+c3<-runif(1,0,11)
+if ((c3<=1)&(c3!=0)) {
+{
+if(ac>=1) 
+{
+cg<-cg+1
+
+ac<-ac-1
+}
+}
+} else if ((c3<=2)&(c3>1)) {
+{
+if(ac>=2) 
+{
+cg<-cg+2
+
+ac<-ac-2
+}
+}
+} else if ((c3<=3)&(c3>2)) {
+{
+if(ac>=3) 
+{
+cg<-cg+3
+
+ac<-ac-3
+}
+}
+} else if ((c3<=4)&(c3>3)) {
+{
+if(ac>=4) 
+{
+cg<-cg+4
+
+ac<-ac-4
+}
+}
+} else if ((c3<=5)&(c3>4)) {
+{
+if(ac>=5) 
+{
+cg<-cg+5
+
+ac<-ac-5
+}
+}
+} else if ((c3<=6)&(c3>5)) {
+{
+if(ac>=6) 
+{
+cg<-cg+6
+
+ac<-ac-6
+}
+}
+} else if ((c3<=7)&(c3>6)) {
+{
+if(ac>=7) 
+{
+cg<-cg+7
+
+ac<-ac-7
+}
+}
+} else if ((c3<=8)&(c3>7)) {
+{
+if(ac>=8) 
+{
+cg<-cg+8
+
+ac<-ac-8
+}
+}
+} else if ((c3<=9)&(c3>8)) {
+{
+if(ac>=9) 
+{
+cg<-cg+9
+
+ac<-ac-9
+}
+}
+} else if ((c3<=10)&(c3>9)) {
+{
+if(ac>=10) 
+{
+cg<-cg+10
+
+ac<-ac-10
+}
+}
+} else if ((c3<=11)&(c3>10)) {
+{
+if(ac>=11) 
+{
+cg<-cg+11
+
+ac<-ac-11
+}
+}
+} 
+
+
+}
+if (ac==0) {cost5<-0} else cost5<-ceiling(c3)*costcg
+
+#g has been updated
+#c has been updated
+
+
+#f is updated
+#d is updated
+
+if ((cd>0)) 
+{
+d1<-runif(1,0,12)
+if ((d1<=1)&(d1!=0)) {
+{
+if(cd>=1) 
+{
+df<-df+1
+
+cd<-cd-1
+}
+}
+} else if ((d1<=2)&(d1>1)) {
+{
+if(cd>=2) 
+{
+df<-df+2
+
+cd<-cd-2
+}
+}
+} else if ((d1<=3)&(d1>2)) {
+{
+if(cd>=3) 
+{
+df<-df+3
+
+cd<-cd-3
+}
+}
+} else if ((d1<=4)&(d1>3)) {
+{
+if(cd>=4) 
+{
+df<-df+4
+
+cd<-cd-4
+}
+}
+} else if ((d1<=5)&(d1>4)) {
+{
+if(cd>=5) 
+{
+df<-df+5
+
+cd<-cd-5
+}
+}
+} else if ((d1<=6)&(d1>5)) {
+{
+if(cd>=6) 
+{
+df<-df+6
+
+cd<-cd-6
+}
+}
+} else if ((d1<=7)&(d1>6)) {
+{
+if(cd>=7) 
+{
+df<-df+7
+
+cd<-cd-7
+}
+}
+} else if ((d1<=8)&(d1>7)) {
+{
+if(cd>=8) 
+{
+df<-df+8
+
+cd<-cd-8
+}
+}
+} else if ((d1<=9)&(d1>8)) {
+{
+if(cd>=9) 
+{
+df<-df+9
+
+cd<-cd-9
+}
+}
+} else if ((d1<=10)&(d1>9)) {
+{
+if(cd>=10) 
+{
+df<-df+10
+
+cd<-cd-10
+}
+}
+} else if ((d1<=11)&(d1>10)) {
+{
+if(cd>=11) 
+{
+df<-df+11
+
+cd<-cd-11
+}
+}
+} else if ((d1<=12)&(d1>11)) {
+{
+if(cd>=12) 
+{
+df<-df+12
+
+cd<-cd-12
+}
+}
+
+} 
+
+
+}
+if (cd==0) {cost6<-0} else cost6<-ceiling(d1)*costdf
+
+#f has been updated
+#d has been updated
+
+
+
+#e is updated
+#b is updated
+
+if ((cb>0))
+{
+b1<-runif(1,0,16)
+if ((b1<=1)&(b1!=0)) {
+{
+if(cb>=1) 
+{
+be<-be+1
+
+cb<-cb-1
+}
+}
+} else if ((b1<=2)&(b1>1)) {
+{
+if(cb>=2) 
+{
+be<-be+2
+
+cb<-cb-2
+}
+}
+} else if ((b1<=3)&(b1>2)) {
+{
+if(cb>=3) 
+{
+be<-be+3
+
+cb<-cb-3
+}
+}
+} else if ((b1<=4)&(b1>3)) {
+{
+if(cb>=4) 
+{
+be<-be+4
+
+cb<-cb-4
+}
+}
+} else if ((b1<=5)&(b1>4)) {
+{
+if(cb>=5) 
+{
+be<-be+5
+
+cb<-cb-5
+}
+}
+} else if ((b1<=6)&(b1>5)) {
+{
+if(cb>=6) 
+{
+be<-be+6
+
+cb<-cb-6
+}
+}
+} else if ((b1<=7)&(b1>6)) {
+{
+if(cb>=7) 
+{
+be<-be+7
+
+cb<-cb-7
+}
+}
+} else if ((b1<=8)&(b1>7)) {
+{
+if(cb>=8) 
+{
+be<-be+8
+
+cb<-cb-8
+}
+}
+} else if ((b1<=9)&(b1>8)) {
+{
+if(cb>=9) 
+{
+be<-be+9
+
+cb<-cb-9
+}
+}
+} else if ((b1<=10)&(b1>9)) {
+{
+if(cb>=10) 
+{
+be<-be+10
+
+cb<-cb-10
+}
+}
+} else if ((b1<=11)&(b1>10)) {
+{
+if(cb>=11) 
+{
+be<-be+11
+
+cb<-cb-11
+}
+}
+} else if ((b1<=12)&(b1>11)) {
+{
+if(cb>=12) 
+{
+be<-be+12
+
+cb<-cb-12
+}
+}
+} else if ((b1<=13)&(b1>12)) {
+{
+if(cb>=13) 
+{
+be<-be+13
+
+cb<-cb-13
+}
+}
+} else if ((b1<=14)&(b1>13)) {
+{
+if(cb>=14) 
+{
+df<-df+14
+
+cb<-cb-14
+}
+}
+} else if ((b1<=15)&(b1>14)) {
+{
+if(cb>=15) 
+{
+be<-be+15
+
+cb<-cb-15
+}
+}
+} else if ((b1<=16)&(b1>15)) {
+{
+if(cb>=16) 
+{
+be<-be+16
+
+cb<-cb-16
+}
+}
+
+
+} 
+
+
+
+}
+if (cb==0) {cost7<-0} else cost7<-ceiling(b1)*costbe
+
+#e has been updated
+#b has been updated
+
+
+
+
+#e is updated
+#d is updated
+
+if ((cd>4))
+{
+d2<-runif(1,4,9.5)
+if ((d2<=5)&(d2!=4)) {
+{
+if(cd>=5) 
+{
+de<-be+5
+
+cd<-cd-5
+}
+}
+} else if ((d2<=6)&(d2>5)) {
+{
+if(cd>=6) 
+{
+de<-be+6
+
+cd<-cd-6
+}
+}
+} else if ((d2<=7)&(d2>6)) {
+{
+if(cd>=7) 
+{
+de<-be+7
+
+cd<-cd-7
+}
+}
+} else if ((d2<=8)&(d2>7)) {
+{
+if(cd>=8) 
+{
+de<-be+8
+
+cd<-cd-8
+}
+}
+} else if ((d2<=9)&(d2>8)) {
+{
+if(cd>=9) 
+{
+de<-be+9
+
+cd<-cd-9
+}
+}
+} else if ((d2<=9.5)&(d2>9)) {
+{
+if(cd>=9.5) 
+{
+de<-be+9.5
+
+cd<-cd-9.5
+}
+}
+
+} 
+
+
+
+}
+if (cd<=4) {cost8<-0} else cost8<-ceiling(d2)*costde
+
+#e has been updated
+#d has been updated
+
+
+
+
+#g is updated
+#f is updated
+
+if ((df>2)) 
+{
+f1<-runif(1,2,22)
+if ((f1<=3)&(f1!=2)) {
+{
+if(df>=3) 
+{
+fg<-cg+3
+
+df<-df-3
+}
+}
+} else if ((f1<=4)&(f1>3)) {
+{
+if(df>=4) 
+{
+fg<-cg+4
+
+df<-df-4
+}
+}
+} else if ((f1<=5)&(f1>4)) {
+{
+if(df>=5) 
+{
+fg<-cg+5
+
+df<-df-5
+}
+}
+} else if ((f1<=6)&(f1>5)) {
+{
+if(df>=6) 
+{
+fg<-cg+6
+
+df<-df-6
+}
+}
+} else if ((f1<=7)&(f1>6)) {
+{
+if(df>=7) 
+{
+fg<-cg+7
+
+df<-df-7
+}
+}
+} else if ((f1<=8)&(f1>7)) {
+{
+if(df>=8) 
+{
+fg<-cg+8
+
+df<-df-8
+}
+}
+} else if ((f1<=9)&(f1>8)) {
+{
+if(df>=9) 
+{
+fg<-cg+9
+
+df<-df-9
+}
+}
+} else if ((f1<=10)&(f1>9)) {
+{
+if(df>=10) 
+{
+fg<-cg+10
+
+df<-df-10
+}
+}
+} else if ((f1<=11)&(f1>10)) {
+{
+if(df>=11) 
+{
+fg<-cg+11
+
+df<-df-11
+}
+}
+} else if ((f1<=12)&(f1>11)) {
+{
+if(df>=12) 
+{
+fg<-cg+12
+
+df<-df-12
+}
+}
+} else if ((f1<=13)&(f1>12)) {
+{
+if(df>=13) 
+{
+fg<-cg+13
+
+df<-df-13
+}
+}
+} else if ((f1<=14)&(f1>13)) {
+{
+if(df>=14) 
+{
+fg<-cg+14
+
+df<-df-14
+}
+}
+} else if ((f1<=15)&(f1>14)) {
+{
+if(df>=15) 
+{
+fg<-cg+15
+
+df<-df-15
+}
+}
+} else if ((f1<=16)&(f1>15)) {
+{
+if(df>=16) 
+{
+fg<-cg+16
+
+df<-df-16
+}
+}
+} else if ((f1<=17)&(f1>16)) {
+{
+if(df>=17) 
+{
+fg<-cg+17
+
+df<-df-17
+}
+}
+} else if ((f1<=18)&(f1>17)) {
+{
+if(df>=18) 
+{
+fg<-cg+18
+
+df<-df-18
+}
+}
+} else if ((f1<=19)&(f1>18)) {
+{
+if(df>=19) 
+{
+fg<-cg+19
+
+df<-df-19
+}
+}
+} else if ((f1<=20)&(f1>19)) {
+{
+if(df>=20) 
+{
+fg<-cg+20
+
+df<-df-20
+}
+}
+} else if ((f1<=21)&(f1>20)) {
+{
+if(df>=21) 
+{
+fg<-cg+21
+
+df<-df-21
+}
+}
+} else if ((f1<=22)&(f1>21)) {
+{
+if(df>=22) 
+{
+fg<-cg+22
+
+df<-df-22
+}
+}
+} 
+
+}
+if (df<=2) {cost9<-0} else cost9<-ceiling(f1)*costfg
+
+#g has been updated
+#f has been updated
+
+
+#h is updated
+#f is updated
+
+if ((df>1)) 
+{
+f2<-runif(1,1,17)
+if ((f2<=2)&(f2!=1)) {
+{
+if(df>=2) 
+{
+fh<-fh+2
+
+df<-df-2
+}
+}
+} else if ((f2<=3)&(f2>2)) {
+{
+if(df>=3) 
+{
+fh<-fh+3
+
+df<-df-3
+}
+}
+} else if ((f2<=4)&(f2>3)) {
+{
+if(df>=4) 
+{
+fh<-fh+4
+
+df<-df-4
+}
+}
+} else if ((f2<=5)&(f2>4)) {
+{
+if(df>=5) 
+{
+fh<-fh+5
+
+df<-df-5
+}
+}
+} else if ((f2<=6)&(f2>5)) {
+{
+if(df>=6) 
+{
+fh<-fh+6
+
+df<-df-6
+}
+}
+} else if ((f2<=7)&(f2>6)) {
+{
+if(df>=7) 
+{
+fh<-fh+7
+
+df<-df-7
+}
+}
+} else if ((f2<=8)&(f2>7)) {
+{
+if(df>=8) 
+{
+fh<-fh+8
+
+df<-df-8
+}
+}
+} else if ((f2<=9)&(f2>8)) {
+{
+if(df>=9) 
+{
+fh<-fh+9
+
+df<-df-9
+}
+}
+} else if ((f2<=10)&(f2>9)) {
+{
+if(df>=10) 
+{
+fh<-fh+10
+
+df<-df-10
+}
+}
+} else if ((f2<=11)&(f2>10)) {
+{
+if(df>=11) 
+{
+fh<-fh+11
+
+df<-df-11
+}
+}
+} else if ((f2<=12)&(f2>11)) {
+{
+if(df>=12) 
+{
+fh<-fh+12
+
+df<-df-12
+}
+}
+} else if ((f2<=13)&(f2>12)) {
+{
+if(df>=13) 
+{
+fh<-fh+13
+
+df<-df-13
+}
+}
+} else if ((f2<=14)&(f2>13)) {
+{
+if(df>=14) 
+{
+fh<-fh+14
+
+df<-df-14
+}
+}
+} else if ((f2<=15)&(f2>14)) {
+{
+if(df>=15) 
+{
+fh<-fh+15
+
+df<-df-15
+}
+}
+} else if ((f2<=16)&(f2>15)) {
+{
+if(df>=16) 
+{
+fh<-fh+16
+
+df<-df-16
+}
+}
+} else if ((f2<=17)&(f2>16)) {
+{
+if(df>=17) 
+{
+fh<-fh+17
+
+df<-df-17
+}
+}
+
+} 
+
+}
+if (df<=1) {cost10<-0} else cost10<-ceiling(f2)*costfh
+
+#h has been updated
+#f has been updated
+
+
+
+#h is updated
+#e is updated
+
+
+if ((de>0))
+{
+e1<-runif(1,0,14.5)
+if ((e1<=1)&(e1!=0)) {
+{
+if(de>=1) 
+{
+eh<-fh+1
+
+de<-de-1
+}
+}
+} else if ((e1<=2)&(e1>1)) {
+{
+if(de>=2) 
+{
+eh<-fh+2
+
+de<-de-2
+}
+}
+} else if ((e1<=3)&(e1>2)) {
+{
+if(de>=3) 
+{
+eh<-fh+3
+
+de<-de-3
+}
+}
+} else if ((e1<=4)&(e1>3)) {
+{
+if(de>=4) 
+{
+eh<-fh+4
+
+de<-de-4
+}
+}
+} else if ((e1<=5)&(e1>4)) {
+{
+if(de>=5) 
+{
+eh<-fh+5
+
+de<-de-5
+}
+}
+} else if ((e1<=6)&(e1>5)) {
+{
+if(de>=6) 
+{
+eh<-fh+6
+
+de<-de-6
+}
+}
+} else if ((e1<=7)&(e1>6)) {
+{
+if(de>=7) 
+{
+eh<-fh+7
+
+de<-de-7
+}
+}
+} else if ((e1<=8)&(e1>7)) {
+{
+if(de>=8) 
+{
+eh<-fh+8
+
+de<-de-8
+}
+}
+} else if ((e1<=9)&(e1>8)) {
+{
+if(de>=9) 
+{
+eh<-fh+9
+
+de<-de-9
+}
+}
+} else if ((e1<=10)&(e1>9)) {
+{
+if(de>=10) 
+{
+eh<-fh+10
+
+de<-de-10
+}
+}
+} else if ((e1<=11)&(e1>10)) {
+{
+if(de>=11) 
+{
+eh<-fh+11
+
+de<-de-11
+}
+}
+} else if ((e1<=12)&(e1>11)) {
+{
+if(de>=12) 
+{
+eh<-fh+12
+
+de<-de-12
+}
+}
+} else if ((e1<=13)&(e1>12)) {
+{
+if(de>=13) 
+{
+eh<-fh+13
+
+de<-de-13
+}
+}
+} else if ((e1<=14)&(e1>13)) {
+{
+if(de>=14) 
+{
+eh<-fh+14
+
+de<-de-14
+}
+}
+} else if ((e1<=14.5)&(e1>14)) {
+{
+if(de>=14.5) 
+{
+eh<-fh+14.5
+
+de<-de-14.5
+}
+}
+
+} 
+
+}
+if (de==0) {cost11<-0} else cost11<-ceiling(e1)*costeh
+
+#h has been updated
+#e has been updated
+
+
+#i is updated
+#g is updated
+
+#this
+if ((fg>0)) 
+{
+g1<-runif(1,0,12)
+if ((g1<=1)&(g1!=0)) {
+{
+if(fg>=1) 
+{
+gi<-gi+1
+
+fg<-fg-1
+}
+}
+} else if ((g1<=2)&(g1>1)) {
+{
+if(fg>=2) 
+{
+gi<-gi+2
+
+fg<-fg-2
+}
+}
+} else if ((g1<=3)&(g1>2)) {
+{
+if(fg>=3) 
+{
+gi<-gi+3
+
+fg<-fg-3
+}
+}
+} else if ((g1<=4)&(g1>3)) {
+{
+if(fg>=4) 
+{
+gi<-gi+4
+
+fg<-fg-4
+}
+}
+} else if ((g1<=5)&(f2>4)) {
+{
+if(fg>=5) 
+{
+gi<-gi+5
+
+fg<-fg-5
+}
+}
+} else if ((g1<=6)&(g1>5)) {
+{
+if(fg>=6) 
+{
+gi<-gi+6
+
+fg<-fg-6
+}
+}
+} else if ((g1<=7)&(g1>6)) {
+{
+if(fg>=7) 
+{
+gi<-gi+7
+
+fg<-fg-7
+}
+}
+} else if ((g1<=8)&(g1>7)) {
+{
+if(fg>=8) 
+{
+gi<-gi+8
+
+fg<-fg-8
+}
+}
+} else if ((g1<=9)&(g1>8)) {
+{
+if(fg>=9) 
+{
+gi<-gi+9
+
+fg<-fg-9
+}
+}
+} else if ((g1<=10)&(g1>9)) {
+{
+if(fg>=10) 
+{
+gi<-gi+10
+
+fg<-fg-10
+}
+}
+} else if ((g1<=11)&(g1>10)) {
+{
+if(fg>=11) 
+{
+gi<-gi+11
+
+fg<-fg-11
+}
+}
+} else if ((g1<=12)&(g1>11)) {
+{
+if(fg>=12) 
+{
+gi<-gi+12
+
+fg<-fg-12
+}
+}
+} 
+
+
+}
+if (fg==0) {
+cost12<-0
+g1<-0
+} else 
+
+{
+cost12<-ceiling(g1)*costgi
+}
+
+#i has been updated
+#g has been updated
+
+
+
+#i is updated
+#h is updated
+
+
+if ((eh>1)) 
+{
+h1<-runif(1,2,16.5)
+if ((h1<=2)&(h1!=1)) {
+{
+if(eh>=2) 
+{
+hi<-hi+2
+
+eh<-eh-2
+}
+}
+} else if ((h1<=3)&(h1>2)) {
+{
+if(eh>=3) 
+{
+hi<-hi+3
+
+eh<-eh-3
+}
+}
+} else if ((h1<=4)&(h1>3)) {
+{
+if(eh>=4) 
+{
+hi<-hi+4
+
+eh<-eh-4
+}
+}
+} else if ((h1<=5)&(h1>4)) {
+{
+if(eh>=4) 
+{
+hi<-hi+5
+
+eh<-eh-5
+}
+}
+} else if ((h1<=6)&(h1>5)) {
+{
+if(cg>=6) 
+{
+hi<-hi+6
+
+eh<-eh-6
+}
+}
+} else if ((h1<=7)&(h1>6)) {
+{
+if(cg>=7) 
+{
+hi<-hi+7
+
+eh<-eh-7
+}
+}
+} else if ((h1<=8)&(h1>7)) {
+{
+if(eh>=8) 
+{
+hi<-hi+8
+
+eh<-eh-8
+}
+}
+} else if ((h1<=9)&(h1>8)) {
+{
+if(eh>=9) 
+{
+hi<-hi+9
+
+eh<-eh-9
+}
+}
+} else if ((h1<=10)&(h1>9)) {
+{
+if(eh>=10) 
+{
+hi<-hi+10
+
+eh<-eh-10
+}
+}
+} else if ((h1<=11)&(h1>10)) {
+{
+if(eh>=11) 
+{
+hi<-hi+11
+
+eh<-eh-11
+}
+}
+} else if ((h1<=12)&(h1>11)) {
+{
+if(eh>=12) 
+{
+hi<-hi+12
+
+eh<-eh-12
+}
+}
+} else if ((h1<=13)&(h1>12)) {
+{
+if(eh>=13) 
+{
+hi<-hi+13
+
+eh<-eh-13
+}
+}
+} else if ((h1<=14)&(h1>13)) {
+{
+if(eh>=14) 
+{
+hi<-hi+14
+
+eh<-eh-14
+}
+}
+} else if ((h1<=15)&(h1>14)) {
+{
+if(eh>=15) 
+{
+hi<-hi+15
+
+eh<-eh-15
+}
+}
+} else if ((h1<=16)&(h1>15)) {
+{
+if(eh>=16) 
+{
+hi<-hi+16
+
+eh<-eh-16
+}
+}
+} else if ((h1<=16.5)&(h1>16)) {
+{
+if(eh>=16.5) 
+{
+hi<-hi+16.5
+
+eh<-eh-16.5
+}
+}
+} 
+
+
+}
+if (eh<=1)
+{
+cost13<-0
+h1<-0
+} else 
+{
+cost13<-ceiling(h1)*costhi
+}
+
+#i has been updated
+#h has been updated
+
+#de<-de-ceiling(e1)
+
+d1<-de+ceiling(g1)+ceiling(h1)+eh
+s1<-ceiling(b0)+ceiling(c0)
+
+#pick a candidate solution where supply is 30 and demand at nodes e,h, and i are 5, 15, 10
+if ((d1==30)&(s1==30)&(j==0)&((ceiling(g1)+ceiling(h1))==10)&(eh==15)&(de==5))
+{
+cost<-cost1+cost2+cost3+cost4+cost5+cost6+cost7+cost8+cost9+cost10+cost11+cost12+cost13
+#min cost initialization
+costmin<-cost
+supply<-s1
+demand<-d1
+j<-1
+}
+
+if ((d1==30)&(s1==30)&(j==1)&((ceiling(g1)+ceiling(h1))==10)&(eh==15)&(de==5))
+{
+cost<-cost1+cost2+cost3+cost4+cost5+cost6+cost7+cost8+cost9+cost10+cost11+cost12+cost13
+if (cost<costmin) {
+{
+#min cost update
+costmin<-cost
+supply<-s1
+demand<-d1
+}
+}
+}
+
+
+}
+
+print (supply)
+print (demand)
+print (costmin)
